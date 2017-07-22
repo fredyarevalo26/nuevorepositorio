@@ -1,0 +1,55 @@
+doctype html
+html
+	head
+		title clase de jade
+		meta(charset="utf-8")
+	body
+		p
+			span hola mundo
+		p#hola probando el id en el p
+		div.clase1.clase2.clase3 probando las clases de jade
+		h1.clase4.clase5.clase6#elid probando clases con id
+		div 
+			|hola
+			|como estas
+		//este es solo un comentario
+
+		#row
+			#col-lg-6
+				p columna 1
+			#col-lg-5
+				p columna 2
+		div: p: span: h1 hola
+		img(src="img/imagen1.jpg", alt="imagen", class="claseimg").classimg#idimg
+
+		img(src="img/imagen1.jpg",
+		alt="imagen",
+		class="claseimg"
+		)
+
+		img(src="img/imagen1.jpg"
+		alt="imagen"
+		class="claseimg"
+		)
+
+		- var foo = "bar"
+		- var xixa = "hola"
+		p= foo
+		div= xixa
+		ul
+			for item, i in ['foo','bar','baz']
+				li= item
+		- var number = "0"
+		unless number == 1
+			p hola2
+
+		.var clase = "programacion"
+		.hola
+
+		mixin fin(parametro)
+			.hoy 
+				p=parametro
+
+		+fin("hola mundo")
+		
+

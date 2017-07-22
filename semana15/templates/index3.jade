@@ -1,0 +1,23 @@
+- var items = [ { title: "Ocean's Eleven", cast: ["Julia Roberts", "George Clooney", "Brad Pitt", "Andy Garcia"], genres: ["Comedy", "Thriller"], posterImage: "img/oceans eleven", imdbUrl: "http://www.imdb.com/title/tt0240772", rating: 7 } ];
+
+mixin variable(item)
+	.movie-card
+		a(href="#item.imdbURL").link
+			h2.movie-title=item.title
+		if(item.rating > 5)
+			p Positiva
+		else
+			p Negativa
+		img(class="movie-poster",src="#{item.posterImage}")
+		h3 Cast
+		ul.cast
+			for n in item.cast
+				li=n
+		.rating
+			img(src="imagen.jpg")
+		ul.genero
+			for j in item.genres
+				li=j
+
+for item in items
+	+variable(item)
